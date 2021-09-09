@@ -62,8 +62,8 @@ exports.seed = async function(knex) {
     {ingredient_name: 'Jelly'},
     {ingredient_name: 'Bowl'}
   ])
-  await knex('ingredient_quantities').truncate()
-  await knex('ingredient_quantities').insert([
+  await knex('step_ingredients').truncate()
+  await knex('step_ingredients').insert([
     {quantity: 0.5, 
     step_id: 1,
     ingredient_id: 1
