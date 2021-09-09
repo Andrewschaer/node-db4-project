@@ -43,8 +43,9 @@ exports.up = async function(knex) {
 };
 
 exports.down = async function(knex) {
-    await knex.schema.dropTableIfExists('recipes');
-    await knex.schema.dropTableIfExists('steps');
-    await knex.schema.dropTableIfExists('ingredients');
-    await knex.schema.dropTableIfExists('ingredient_quantities');
+    await knex.schema
+        .dropTableIfExists('ingredient_quantities')
+        .dropTableIfExists('ingredients')
+        .dropTableIfExists('steps')
+        .dropTableIfExists('recipes');
 };
